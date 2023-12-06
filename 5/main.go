@@ -78,7 +78,7 @@ func useMapRange(r Range, pmap []PlantMap) []Range {
 		for _, m := range pmap {
 			if i.start >= m.srcrange && i.start < m.srcrange+m.width {
 				if i.start+i.width < m.srcrange+m.width {
-					// Case where range is completely enclapsed in map
+					// Case where range is completely encapsulated in map
 					result = append(result, Range{useMap(i.start, pmap), i.width})
 					i = Range{-1, -1}
 					found = true
@@ -131,7 +131,7 @@ func main() {
 
 	for i := 0; i < len(seeds); i += 2 {
 		// For each seed range, we start with one range (obviously)
-		ranges := []Range{Range{seeds[i], seeds[i+1]}}
+		ranges := []Range{{seeds[i], seeds[i+1]}}
 
 		for _, pmap := range pmaps {
 			// Expand out the ranges for each map in turn
